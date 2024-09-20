@@ -1,0 +1,25 @@
+
+.hero {
+    background: url('almacenamiento"a"-web-fondo.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh;
+    }
+}
+body {
+    background: #d3cce3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e9e4f0, #d3cce3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #12eeeefd, #8e01f9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.centered {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
