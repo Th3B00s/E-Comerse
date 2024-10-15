@@ -3,118 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Computadoras</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
+    <title>The_lion-Shop</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <style>
+     
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#tabla-usuarios">Tabla de Usuarios</a></li>
+                <li><a href="#" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li> <!-- Contador de productos en el carrito -->
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="table.html" target="_blank">Table</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Carrito emergente -->
+    <div id="cart">
+        <h4>Carrito</h4>
+        <ul id="cart-items">
+            <!-- Aquí se mostrarán los productos agregados al carrito -->
+        </ul>
+    </div>
+    <!-- Modal del Carrito -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Tu Carrito</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="modal-cart-items">
+                <!-- Aquí se llenarán los productos dinámicamente -->
+            </tbody>
+        </table>
+        <p>Total: $<span id="modal-total-cart-value">0</span></p>
+        <button id="checkout-btn">Pagar</button>
+    </div>
+</div>
 
-    <!-- Hero Section -->
-  
-        <div class="container">
-            
-           <center> <h1>Bienvenidos a The_lion-Shop</h1>
-            <p>Encuentra las mejores computadoras y accesorios</p></center>
-        </div>
-    </section>
+    <!-- Sección de Bienvenida -->
+    <section id="inicio" style="margin-top: 70px;">
+       <center> <h1>Bienvenidos a The_lion-Shop</h1>
+        <p>Encuentra las mejores computadoras y accesorios</p>
+    </section></center>
 
-    <!-- Productos -->
-    <section id="productos" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Nuestros Productos</h2>
+    <!-- Sección de Productos -->
+    <section id="productos">
+        <div class="container mt-2">
+           <center> <h2>Nuestros Productos</h2></center>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-md-2 mb-2">
                     <div class="card">
-                        <img src="lap.jpg" class="card-img-top" alt="Producto 1">
+                        <img src="public/images/lap.jpg" class="card-img-top" alt="Laptop Gaming">
                         <div class="card-body">
                             <h5 class="card-title">Laptop Gaming</h5>
                             <p class="card-text">Potente y rápida para tus juegos favoritos.</p>
-                            <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                            <button class="btn btn-primary" onclick="addToCart('Laptop Gaming')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="escritorio.jpg" class="card-img-top" alt="Producto 2">
+                        <img src="public/images/escritorio.jpg" class="card-img-top" alt="PC de Escritorio">
                         <div class="card-body">
                             <h5 class="card-title">PC de Escritorio</h5>
                             <p class="card-text">Perfecta para trabajo y entretenimiento.</p>
-                            <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                            <button class="btn btn-primary" onclick="addToCart('PC de Escritorio')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-md- mb-4">
                     <div class="card">
-                        <img src="accesorio.jpg" class="card-img-top" alt="Producto 3">
+                        <img src="public/images/accesorio.jpg" class="card-img-top" alt="Accesorios">
                         <div class="card-body">
                             <h5 class="card-title">Accesorios</h5>
                             <p class="card-text">Teclados, ratones y más para tu setup.</p>
-                            <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                            <button class="btn btn-primary" onclick="addToCart('Accesorios')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <form action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
-    
-    <section id="contacto" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contáctanos</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <form>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" rows="3" placeholder="Tu mensaje"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-                <div class="col-lg-6">
-                    <h4>Información de Contacto</h4>
-                    <p><strong>Email:</strong> the_lion@gmail.com</p>
-                    <p><strong>Teléfono:</strong> +52 8110462002</p>
-                </div>
-            </div>
-        </div>
+    <!-- Tabla de Usuarios (DataTable) -->
+    <section id="tabla-usuarios">
+        <h2>Usuarios Registrados</h2>
+        <table id="datatable_users" class="display">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Compañía</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody_users">
+                <!-- Los usuarios se cargarán aquí dinámicamente desde la API -->
+            </tbody>
+        </table>
     </section>
 
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="public/js/main.js"></script>
 </body>
 </html>
