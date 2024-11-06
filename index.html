@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The_lion-Shop</title>
+    <title>El_Tenni</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+   
     <header>
         <nav>
             <ul>
@@ -47,33 +47,28 @@
                     <th>Cantidad</th>
                 </tr>
             </thead>
-            <tbody id="modal-cart-items">
-                <!-- Aquí se llenarán los productos dinámicamente -->
+            <tbody id="modal-cart-items">            
             </tbody>
         </table>
         <p>Total: $<span id="modal-total-cart-value">0</span></p>
         <button id="checkout-btn">Pagar</button>
     </div>
 </div>
-
-    <!-- Sección de Bienvenida -->
     <section id="inicio" style="margin-top: 70px;">
-       <center> <h1>Bienvenidos a The_lion-Shop</h1>
-        <p>Encuentra las mejores computadoras y accesorios</p>
+       <center> <h1>Bienvenidos a The_tennis-Shop</h1>
+        <p>Encuentra los mejores tennis</p>
     </section></center>
-
-    <!-- Sección de Productos -->
     <section id="productos">
         <div class="container mt-2">
            <center> <h2>Nuestros Productos</h2></center>
             <div class="row">
                 <div class="col-md-2 mb-2">
                     <div class="card">
-                        <img src="public/images/lap.jpg" class="card-img-top" alt="Laptop Gaming">
+                        <img src="public/images/lap.jpg" class="card-img-top" alt="Suavidad">
                         <div class="card-body">
-                            <h5 class="card-title">Laptop Gaming</h5>
-                            <p class="card-text">Potente y rápida para tus juegos favoritos.</p>
-                            <button class="btn btn-primary" onclick="addToCart('Laptop Gaming')">Agregar al carrito</button>
+                            <h5 class="card-title">Teni Suaves</h5>
+                            <p class="card-text">Loa mas comodos.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Savidad')">Agregar al carrito</button>
                             <button class="btn-event" data-animation="scale">Scale</button>
                             <button class="btn-event" data-animation="rotate">Rotar</button>
                             <button class="btn-event" data-animation="fade">Fade/Show</button>
@@ -82,11 +77,11 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="public/images/escritorio.jpg" class="card-img-top" alt="PC de Escritorio">
+                        <img src="public/images/escritorio.jpg" class="card-img-top" alt="Colors">
                         <div class="card-body">
-                            <h5 class="card-title">PC de Escritorio</h5>
+                            <h5 class="card-title">Multi color</h5>
                             <p class="card-text">Perfecta para trabajo y entretenimiento.</p>
-                            <button class="btn btn-primary" onclick="addToCart('PC de Escritorio')">Agregar al carrito</button>
+                            <button class="btn btn-primary" onclick="addToCart('Colors')">Agregar al carrito</button>
                             <button class="btn-event" data-animation="scale">Scale</button>
                             <button class="btn-event" data-animation="rotate">Rotar</button>
                             <button class="btn-event" data-animation="fade">Fade/Show</button>
@@ -95,11 +90,11 @@
                 </div>
                 <div class="col-md- mb-4">
                     <div class="card">
-                        <img src="public/images/accesorio.jpg" class="card-img-top" alt="Accesorios">
+                        <img src="public/images/accesorio.jpg" class="card-img-top" alt="Inigualables">
                         <div class="card-body">
-                            <h5 class="card-title">Accesorios</h5>
-                            <p class="card-text">Teclados, ratones y más para tu setup.</p>
-                            <button class="btn btn-primary" onclick="addToCart('Accesorios')">Agregar al carrito</button>
+                            <h5 class="card-title">Ultimos del mercado</h5>
+                            <p class="card-text">Modelos inigualables.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Inigualables')">Agregar al carrito</button>
                             <button class="btn-event" data-animation="scale">Scale</button>
                             <button class="btn-event" data-animation="rotate">Rotar</button>
                             <button class="btn-event" data-animation="fade">Fade/Show</button>

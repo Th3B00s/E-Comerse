@@ -56,7 +56,7 @@ function renderCart() {
 
     cart.forEach(product => {
         const row = document.createElement('tr');
-        row.innerHTML = `
+        row.innerHTML = `s
             <td>${product.name}</td>
             <td>${product.price}</td>
             <td>${product.quantity}</td>
